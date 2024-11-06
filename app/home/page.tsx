@@ -1,8 +1,6 @@
 'use client'
 import pillMeChar from '@/app/assets/icons/pillme_character.png';
-import search from '@/app/assets/icons/search.svg';
 import Image from 'next/image';
-import Form from 'next/form';
 import pinkBrain from '@/app/assets/icons/pink_brain.svg';
 import pinkFunnel from '@/app/assets/icons/pink_funnel.svg';
 import pinkCamera from '@/app/assets/icons/pink_pill_cam.svg';
@@ -10,6 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import forward from '@/app/assets/icons/Forward.svg';
 import backward from '@/app/assets/icons/backward.svg';
 import { useSwiper } from 'swiper/react';
+import InputField from '../components/InputField';
 import 'swiper/css';
 
 const desc = [
@@ -61,12 +60,11 @@ function PillMeDesc() {
   )
 }
 
-
 function HealthSlide() {
   const swiper = useSwiper();
 
   return (
-    <div className='w-full flex flex-col items-center justify-center gap-8 py-14'>
+    <div className='w-full flex flex-col items-center justify-center gap-8 pb-24'>
         <h1 className='text-xl font-bold'>건강 고민 있으신가요?</h1>
         <div className='flex items-center justify-between gap-4'>
           <button className='w-[80px]' disabled></button>
@@ -80,13 +78,10 @@ function HealthSlide() {
           </button>
         </div> 
         {/* Form action에 search engine 포함 예정 */}
-        <Form action="/home/inner" className='w-full flex flex-col items-center justify-center'> 
-          <label htmlFor="search-bar" className='flex px-4 py-2 border-2 rounded-full w-full'>
-            <Image src={search} alt="검색" className='w-[20px]'/>
-            <input id="search-bar" type="text" placeholder='눈이 자꾸 떨려요' className=' pl-2 outline-none w-full' />
-          </label>
-          <p className='text-sm m-2'>건강기능 상품을 추천해드릴게요!</p>
-        </Form>
+        <div className='w-full flex flex-col items-center justify-center gap-3'>
+          <InputField />
+          <p>건강기능 상품을 추천해드릴게요!</p>
+        </div>
       </div>
   )
 }
@@ -95,7 +90,7 @@ function DietSlide() {
   const swiper = useSwiper();
 
   return (
-    <div className='w-full flex flex-col items-center justify-center gap-8 py-14'>
+    <div className='w-full flex flex-col items-center justify-center gap-8 pb-24'>
         <h1 className='text-xl font-bold'>다이어트 고민 있으신가요?</h1>
         <div className='flex items-center justify-between gap-4'>
           <button
@@ -109,13 +104,10 @@ function DietSlide() {
           <button className='w-[80px]' disabled></button>
         </div>
         {/* Form action에 search engine 포함 예정 */}
-        <Form action="/home/inner" className='w-full flex flex-col items-center justify-center'> 
-          <label htmlFor="search-bar" className='flex px-4 py-2 border-2 rounded-full w-full'>
-            <Image src={search} alt="검색" className='w-[20px]'/>
-            <input id="search-bar" type="text" placeholder='물만 마셔도 살이 쪄요.' className=' pl-2 outline-none w-full' />
-          </label>
-          <p className='text-sm m-2'>보조제와 영양제를 추천해드릴게요!</p>
-        </Form>
+        <div className='w-full flex flex-col items-center justify-center gap-3'>
+          <InputField />
+          <p>보조제와 영양제를 추천해드릴게요!</p>
+        </div>
       </div>
   )
 }
