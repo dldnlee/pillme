@@ -9,6 +9,7 @@ import forward from '@/app/assets/icons/forward.svg';
 import gear from '@/app/assets/icons/gear.svg';
 import signin from '@/app/assets/icons/signin.svg';
 import { useState } from 'react';
+import Link from 'next/link';
 
 
 const dummyData = [
@@ -54,13 +55,13 @@ function SideBar({active, setActive} : {active : boolean, setActive: React.Dispa
             </div>
             <Image src={forward} alt="Right Arrow" /> 
           </button>
-          <button className='w-full flex p-6 items-center justify-between hover:bg-gray-200'>
+          <Link href="/login" className='w-full flex p-6 items-center justify-between hover:bg-gray-200'>
             <div className='flex gap-3'>
               <Image src={signin} alt="clipboard" />
               <p>로그인</p>
             </div>
             <Image src={forward} alt="Right Arrow" /> 
-          </button>
+          </Link>
         </div>
       </div>
       <button className='w-full h-full' onClick={() => setActive(!active)} />
