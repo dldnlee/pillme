@@ -33,7 +33,7 @@ const dummyData = [
 ]
 
 function PickupItems({title, address, number} : {title: string, address: string, number: string}) {
-  const [active, setActive] = useState();
+  // const [active, setActive] = useState();
 
 
   return (
@@ -50,9 +50,6 @@ function PickupItems({title, address, number} : {title: string, address: string,
         </div>
       </div>
       <button 
-      onClick={() => { 
-        setActive
-      }}
       className="text-xs p-2 rounded-lg h-[53px] bg-skyblue hover:bg-skyblue/30">
         픽억예약
       </button>
