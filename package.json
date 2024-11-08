@@ -13,6 +13,7 @@
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-circular-menu": "^2.4.13",
     "react-dom": "19.0.0-rc-02c0e824-20241028",
+    "styled-components": "^6.1.13",
     "swiper": "^11.1.14"
   },
   "devDependencies": {
