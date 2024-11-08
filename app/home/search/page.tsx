@@ -105,12 +105,12 @@ export default function ResultPage() {
   return (
     <div className="p-5 flex flex-col gap-4 w-full h-full">
       <div className="flex w-full items-center justify-center gap-2">
-        <Link href="./" replace={true}>
-          <Image src={arrowLeft} alt="돌아가기" className="w-[30px]"/>
-        </Link>
         <Suspense>
+          <Link href="./" replace={true}>
+            <Image src={arrowLeft} alt="돌아가기" className="w-[30px]"/>
+          </Link>
           <InputField userInput={search} />
-        </Suspense>
+      </Suspense>
       </div>
       <div className="w-full text-center text-xs p-4 bg-gray-200 rounded-xl flex flex-col gap-4">
         <div>
@@ -128,7 +128,7 @@ export default function ResultPage() {
       <div className="w-full flex items-center justify-center gap-3 overflow-auto">
         {
           dummyData2.map((item, idx) => (
-            <button key={idx} type="button" className="rounded-full text-xs bg-primary size-[60px] hover:bg-white hover:border-2 hover:border-primary">{item.text}</button>
+            <button key={idx} type="button" className="rounded-full text-xs bg-primary size-[60px] hover:bg-white text-white hover:text-black hover:border-2 hover:border-primary">{item.text}</button>
           ))
         }
       </div>
