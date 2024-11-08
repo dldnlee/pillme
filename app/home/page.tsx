@@ -5,7 +5,7 @@ import pinkBrain from '@/app/assets/icons/pink_brain.svg';
 import pinkFunnel from '@/app/assets/icons/pink_funnel.svg';
 import pinkCamera from '@/app/assets/icons/pink_pill_cam.svg';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import forward from '@/app/assets/icons/Forward.svg';
+import forward from '@/app/assets/icons/forward.svg';
 import backward from '@/app/assets/icons/backward.svg';
 import { useSwiper } from 'swiper/react';
 import InputField from '../components/InputField';
@@ -130,7 +130,7 @@ function SearchCategory() {
 
 export default function HomePage() {
   return (
-    <div className='w-full p-10'>
+    <div className='w-full p-10 h-full'>
       <SearchCategory />
       <PillMeDesc />
     </div>
