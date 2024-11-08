@@ -60,14 +60,14 @@ function PickupItems({title, address, number} : {title: string, address: string,
   )
 }
 
-function InfoPopup({active} : {active: boolean}) {
-  return ( 
-    <div className={`bottom-0 left-0 ${active ? "fixed" : "hidden"} bg-white`}>
+// function InfoPopup({active} : {active: boolean}) {
+//   return ( 
+//     <div className={`bottom-0 left-0 ${active ? "fixed" : "hidden"} bg-white`}>
 
 
-    </div>
-  )
-}
+//     </div>
+//   )
+// }
 
 
 export default function PickupPage() {
