@@ -63,7 +63,7 @@ function CircularMenu() {
     itemSize={3.5}
     radius={7}
     rotationAngleInclusive={false}
-    className="w-full h-[400px] flex items-center justify-center"
+    className="w-full h-[350px] flex items-center justify-center"
     open={true}
     menuToggleElement={(
       <button type="button" className="rounded-full size-[90px] border-2 border-primary hover:bg-primary hover:text-white bg-white">
