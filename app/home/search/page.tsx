@@ -1,7 +1,5 @@
 'use client'
-
 import Image from "next/image";
-
 import { useSearchParams } from "next/navigation";
 import InputField from "@/app/components/InputField";
 import arrowLeft from "@/app/assets/icons/arrow_left.svg";
@@ -46,7 +44,7 @@ const dummyData2 = [
 
 function BottomMenu() {
   return (
-    <div className='flex justify-center gap-2 text-center items-center w-full absolute p-4 bottom-0 text-white left-0 shadow-lg shadow-black pb-10 px-10'>
+    <div className='flex overflow-hidden justify-center gap-2 text-center items-center w-full h-fit p-4 text-white bg-white pb-10 border-t-2 px-10 fixed bottom-0 left-0'>
       <Link href="/home" className='py-4 px-4 w-full bg-primary hover:bg-primary/50 rounded-lg'>구매하기
       </Link>
       <Link href="/home" className="py-4 px-4 w-full bg-primary hover:bg-primary/50 rounded-lg">Pick-Up 신청
@@ -78,8 +76,8 @@ function CircularMenu() {
           style={{
             borderColor: "#FF95DE",
             borderWidth: "2px",
+            
           }}
-          className=""
           >
             <p>{item.text}</p>
           </CircleMenuItem>
@@ -89,50 +87,75 @@ function CircularMenu() {
   )
 }
 
+function Feedback() {
+  return (
+    <div className="w-full text-center text-xs p-4 bg-gray-200 rounded-xl flex flex-col gap-4">
+          <div>
+            <p><span className="font-bold">항산화 및 면역력 강화</span>에 대한 고민을 하고 계신 것 같아요.</p>
+            <p>도움이 될만한 제품을 추천해드릴게요! 아래 원을 클릭해보세요.</p>
+          </div>
+          <div className="flex gap-4">
+            <button className="bg-primary text-white p-3 text-xs hover:bg-white hover:text-black hover:border-primary font-bold rounded-xl w-2/5">도움이 되었어요!</button>
+            <button className="bg-primary text-white p-3 hover:bg-white hover:text-black hover:border-primary font-bold rounded-xl w-3/5">의도한 결과가 아니에요...</button>
+          </div>
+        </div>
+  )
+}
 
-export default function ResultPage() {
+function SearchHeader() {
   const [search, setSearch] = useState('');
   const searchParams = useSearchParams()
 
-  // const search = searchParams.get('query')
   useEffect(() => {
     const searchQuery = searchParams.get('query');
     if (!searchQuery ) return;
     setSearch(searchQuery)
   }, [searchParams])
 
-
   return (
-    <div className="p-5 flex flex-col gap-4 w-full h-full">
-      <div className="flex w-full items-center justify-center gap-2">
+    <div className="flex w-full items-center justify-center gap-2">
+      <Link href="./" replace={true}>
+        <Image src={arrowLeft} alt="돌아가기" className="w-[30px]"/>
+      </Link>
+      <InputField userInput={search} />
+    </div>
+  )
+}
+
+function Information() {
+  return (
+    <div className="bg-tertiary w-full h-fit rounded-lg p-3 text-center text-xs mb-[110px]">
+      <div className="bg-white p-5">
+        <p>탄수화물 컷 분홍이 포켓,체지방 컷 초록이 포켓
+        성분: 가르시니아캄보지아, 비타민A, 비타민B1, 비타민B2, 비타민B6, 나이아신, 판토텐산, 비타민C, 녹차추출물, 알로에전잎, 비타민B1, 비타민B6, 판토텐산, 비타민C, 셀레늄, 아연
+        효과: [가르시니아캄보지아추출물] 탄수화물이 지방으로 합성 되는 것을 억제하여 체지방 감소에 도움을 줄 수 있음 [비타민A] 어두운 곳에서 시각 적응을 위해 필요 / 피부와 점막을 형성하고 기능을 유지하는데 필요 / 상피세의 성장과 발달에 필요 [비타민B1] 탄수화물과에너지 대사에 필요 [비타민B2] 체내 에너지 생성에 필요 [비타민B6] 단백질 및 아미노산 이용에 필요 / 혈액의 호모시스테인 수준을 정상으로 유지하는데 필요 [나이아신] 체내 에너지 생성에 필요 [판토텐산] 지방, 탄수화물, 단백질 대사와 에너지 생성에 필요 [비타민C] 결합조직 형성과 기능유지에 필요 / 철의 흡수에 필요</p>
+      </div>
+    </div>
+  )
+}
+
+
+export default function ResultPage() {
+  
+  return (
+    <div className="p-5 flex flex-col gap-4 w-full">
+      <div className="w-full flex flex-col gap-3">
         <Suspense>
-          <Link href="./" replace={true}>
-            <Image src={arrowLeft} alt="돌아가기" className="w-[30px]"/>
-          </Link>
-          <InputField userInput={search} />
-      </Suspense>
-      </div>
-      <div className="w-full text-center text-xs p-4 bg-gray-200 rounded-xl flex flex-col gap-4">
-        <div>
-          <p><span className="font-bold">항산화 및 면역력 강화</span>에 대한 고민을 하고 계신 것 같아요.</p>
-          <p>도움이 될만한 제품을 추천해드릴게요! 아래 원을 클릭해보세요.</p>
+          <SearchHeader />
+        </Suspense>
+        <Feedback />
+        <div className="w-full h-fit flex items-center justify-center">
+          <CircularMenu />
         </div>
-        <div className="flex gap-4">
-          <button className="bg-primary text-white p-3 text-xs hover:bg-white hover:text-black hover:border-primary font-bold rounded-xl w-2/5">도움이 되었어요!</button>
-          <button className="bg-primary text-white p-3 hover:bg-white hover:text-black hover:border-primary font-bold rounded-xl w-3/5">의도한 결과가 아니에요...</button>
+        <div className="w-full flex items-center justify-center gap-3 ">
+          {
+            dummyData2.map((item, idx) => (
+              <button key={idx} type="button" className="rounded-full text-xs bg-primary size-[60px] hover:bg-white text-white hover:text-black hover:border-2 hover:border-primary">{item.text}</button>
+            ))
+          }
         </div>
+        <Information />
       </div>
-      <div className="w-full h-fit flex items-center justify-center">
-        <CircularMenu />
-      </div>
-      <div className="w-full flex items-center justify-center gap-3 overflow-auto">
-        {
-          dummyData2.map((item, idx) => (
-            <button key={idx} type="button" className="rounded-full text-xs bg-primary size-[60px] hover:bg-white text-white hover:text-black hover:border-2 hover:border-primary">{item.text}</button>
-          ))
-        }
-      </div>
-      
       <BottomMenu />
     </div>
   )

@@ -12,7 +12,8 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: "#FF95DE",
-        secondary: "#F94CC3"
+        secondary: "#F94CC3",
+        tertiary: "#ffe0f3",
       },
     },
   },
