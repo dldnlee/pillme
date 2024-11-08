@@ -112,6 +112,7 @@ function DietSlide() {
   )
 }
 
+
 function SearchCategory() {
   return (
     <Swiper
@@ -133,6 +134,7 @@ export default function HomePage() {
     <div className='w-full p-10 h-full'>
       <SearchCategory />
       <PillMeDesc />
+
     </div>
   )
 }
