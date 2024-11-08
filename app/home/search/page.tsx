@@ -7,6 +7,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { CircleMenu, CircleMenuItem } from "react-circular-menu";
 import { Suspense } from "react";
+import box from '@/app/assets/icons/box.svg'
+import link from '@/app/assets/icons/link.svg'
 
 
 const dummyData = [
@@ -44,10 +46,14 @@ const dummyData2 = [
 
 function BottomMenu() {
   return (
-    <div className='flex overflow-hidden justify-center gap-2 text-center items-center w-full h-fit p-4 text-white bg-white pb-10 border-t-2 px-10 fixed bottom-0 left-0'>
-      <Link href="/home" className='py-4 px-4 w-full bg-primary hover:bg-primary/50 rounded-lg'>구매하기
+    <div className='flex overflow-hidden justify-center gap-2 text-center items-center w-full h-fit p-4 text-black bg-white pb-10 border-t-2 px-10 fixed bottom-0 left-0'>
+      <Link href="/home" className="flex items-center justify-center gap-2 py-4 px-4 w-full bg-tertiary hover:bg-white hover:border hover:border-tertiary rounded-lg">
+        <Image src={link} alt="구매하기"/> 
+        <p>구매하기</p>
       </Link>
-      <Link href="/home" className="py-4 px-4 w-full bg-primary hover:bg-primary/50 rounded-lg">Pick-Up 신청
+      <Link href="/home" className="flex items-center justify-center gap-2 py-4 px-4 w-full bg-tertiary hover:bg-white hover:border hover:border-tertiary rounded-lg">
+        <Image src={box} alt="픽업 신청"/>
+        <p>Pick-up 신청</p>
       </Link>
     </div>
   )
@@ -58,6 +64,7 @@ function CircularMenu() {
     <CircleMenu
     startAngle={-90}
     rotationAngle={360}
+    
     itemSize={3.5}
     radius={7}
     rotationAngleInclusive={false}
@@ -76,7 +83,6 @@ function CircularMenu() {
           style={{
             borderColor: "#FF95DE",
             borderWidth: "2px",
-            
           }}
           >
             <p>{item.text}</p>
@@ -144,7 +150,7 @@ export default function ResultPage() {
           <SearchHeader />
         </Suspense>
         <Feedback />
-        <div className="w-full h-fit flex items-center justify-center">
+        <div className="w-full h-fit flex items-center justify-center z-0">
           <CircularMenu />
         </div>
         <div className="w-full flex items-center justify-center gap-3 ">
