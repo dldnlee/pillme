@@ -14,6 +14,7 @@ const config: Config = {
         primary: "#FF95DE",
         secondary: "#F94CC3",
         tertiary: "#ffe0f3",
+        skyblue: "#daebfe"
       },
     },
   },

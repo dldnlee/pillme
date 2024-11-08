@@ -47,11 +47,11 @@ const dummyData2 = [
 function BottomMenu() {
   return (
     <div className='flex overflow-hidden justify-center gap-2 text-center items-center w-full h-fit p-4 text-black bg-white pb-10 border-t-2 px-10 fixed bottom-0 left-0'>
-      <Link href="/home" className="flex items-center justify-center gap-2 py-4 px-4 w-full bg-tertiary hover:bg-white hover:border hover:border-tertiary rounded-lg">
+      <Link href="https://www.coupang.com/np/search?component=&q=%EB%85%B9%EC%B0%A8%EC%B6%94%EC%B6%9C%EB%AC%BC&channel=user" className="flex items-center justify-center gap-2 py-4 px-4 w-full bg-tertiary hover:bg-white hover:border hover:border-tertiary rounded-lg">
         <Image src={link} alt="구매하기"/> 
         <p>구매하기</p>
       </Link>
-      <Link href="/home" className="flex items-center justify-center gap-2 py-4 px-4 w-full bg-tertiary hover:bg-white hover:border hover:border-tertiary rounded-lg">
+      <Link href="/pickup" replace={false} className="flex items-center justify-center gap-2 py-4 px-4 w-full bg-tertiary hover:bg-white hover:border hover:border-tertiary rounded-lg">
         <Image src={box} alt="픽업 신청"/>
         <p>Pick-up 신청</p>
       </Link>

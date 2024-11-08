@@ -79,7 +79,7 @@ function HealthSlide() {
         </div> 
         {/* Form action에 search engine 포함 예정 */}
         <div className='w-full flex flex-col items-center justify-center gap-3'>
-          <InputField />
+          <InputField/>
           <p>건강기능 상품을 추천해드릴게요!</p>
         </div>
       </div>
@@ -105,7 +105,7 @@ function DietSlide() {
         </div>
         {/* Form action에 search engine 포함 예정 */}
         <div className='w-full flex flex-col items-center justify-center gap-3'>
-          <InputField />
+          <InputField placeholder='물만 마셔도 살이 쪄요' />
           <p>보조제와 영양제를 추천해드릴게요!</p>
         </div>
       </div>
