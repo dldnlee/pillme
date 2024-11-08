@@ -6,7 +6,7 @@ import phone from "@/app/assets/icons/phone.svg";
 import arrowLeft from "@/app/assets/icons/arrow_left.svg";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+// import { useState } from "react";
 import pharmacyShop from "@/app/assets/icons/pharmacy_shop.svg";
 
 const dummyData = [
