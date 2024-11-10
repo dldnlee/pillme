@@ -6,7 +6,7 @@ import phone from "@/app/assets/icons/phone.svg";
 import arrowLeft from "@/app/assets/icons/arrow_left.svg";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+// import { useState } from "react";
 import pharmacyShop from "@/app/assets/icons/pharmacy_shop.svg";
 
 const dummyData = [
@@ -69,7 +69,7 @@ function PickupItems({title, address, number} : {title: string, address: string,
 
 export default function PickupPage() {
   return (
-    <div className="w-full flex flex-col gap-4">
+    <div className="w-full flex-col gap-4">
       <Header />
       <div className="flex w-full items-center justify-center gap-2">
         <div className="flex flex-col items-center w-full gap-2">
