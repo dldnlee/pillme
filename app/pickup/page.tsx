@@ -69,7 +69,7 @@ function PickupItems({title, address, number} : {title: string, address: string,
 
 export default function PickupPage() {
   return (
-    <div className="w-full flex flex-col gap-4">
+    <div className="w-full flex-col gap-4">
       <Header />
       <div className="flex w-full items-center justify-center gap-2">
         <div className="flex flex-col items-center w-full gap-2">
