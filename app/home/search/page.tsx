@@ -135,7 +135,7 @@ function Information() {
 export default function ResultPage() {
   
   return (
-    <div className="p-5 flex flex-col gap-4 w-full h-screen overflow-auto relative">
+    <div className="p-5 flex flex-col gap-4 w-full h-screen relative">
       <div className="w-full flex flex-col gap-3">
         <Suspense>
           <SearchHeader />

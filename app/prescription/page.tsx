@@ -52,11 +52,15 @@ export default function PrescriptionPage() {
 
       {/* Bottom Buttons */}
       <div className="absolute bottom-0 w-full bg-white p-4 border-t flex justify-between">
-        <button className="flex items-center justify-center gap-2 w-1/2 py-3 bg-pink-100 text-pink-500 font-bold rounded-lg">
+        <button className="flex items-center justify-center gap-2 w-[90px] py-3 border rounded-lg">
           <FiSearch />
           약사와 상담하기
         </button>
-        <button className="flex items-center justify-center w-1/2 py-3 ml-2 bg-pink-500 text-white font-bold rounded-lg">
+        <button className="flex items-center justify-center gap-2 w-1/2 py-3 bg-tertiary hover:bg-tertiary/50 rounded-lg">
+          <FiSearch />
+          약사와 상담하기
+        </button>
+        <button className="flex items-center justify-center w-1/2 py-3 ml-2 bg-tertiary text-black hover:bg-tertiary/50 rounded-lg">
           결제하기
         </button>
       </div>
