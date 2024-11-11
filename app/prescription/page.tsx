@@ -1,10 +1,9 @@
 
 // import Image from 'next/image';
 'use client'
-import { FiSearch } from 'react-icons/fi';
 import Header from '../components/Header';
 import ReturnButton from '../components/ReturnButton';
-
+import { CgSearchLoading } from "react-icons/cg";
 
 export default function PrescriptionPage() {
 
@@ -33,7 +32,7 @@ export default function PrescriptionPage() {
 
       {/* Prescription Items */}
       <div className="flex-1 w-full overflow-y-auto p-4 space-y-4">
-        {[...Array(3)].map((_, index) => (
+        {[...Array(4)].map((_, index) => (
           <div
             key={index}
             className="flex items-center border border-pink-200 rounded-lg p-4 bg-white"
@@ -51,16 +50,14 @@ export default function PrescriptionPage() {
       </div>
 
       {/* Bottom Buttons */}
-      <div className="absolute bottom-0 w-full bg-white p-4 border-t flex justify-between">
-        <button className="flex items-center justify-center gap-2 w-[90px] py-3 border rounded-lg">
-          <FiSearch />
+      <div className="absolute bottom-0 left-0 w-full bg-white p-4 border-t flex justify-between gap-2">
+        <button className="flex items-center justify-center gap-2 p-2 border border-primary rounded-lg bg-white hover:bg-tertiary">
+          <CgSearchLoading className='size-[30px] text-primary'/> 
+        </button>
+        <button className="flex items-center justify-center gap-2 w-full bg-tertiary hover:bg-tertiary/50 rounded-lg">
           약사와 상담하기
         </button>
-        <button className="flex items-center justify-center gap-2 w-1/2 py-3 bg-tertiary hover:bg-tertiary/50 rounded-lg">
-          <FiSearch />
-          약사와 상담하기
-        </button>
-        <button className="flex items-center justify-center w-1/2 py-3 ml-2 bg-tertiary text-black hover:bg-tertiary/50 rounded-lg">
+        <button className="flex items-center justify-center w-full bg-tertiary text-black hover:bg-tertiary/50 rounded-lg">
           결제하기
         </button>
       </div>

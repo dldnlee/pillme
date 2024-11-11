@@ -8,7 +8,8 @@ import location from "@/app/assets/icons/location.svg";
 import phone from "@/app/assets/icons/phone.svg";
 import ConnectPharmacy from '@/app/components/ConnectPharmacy';
 import Link from 'next/link';
-// import mapImage from '@/app/assets/map_image.png'; // Replace with your actual map image path or URL
+import { HiOutlineShoppingBag } from "react-icons/hi2";
+import { FaRegListAlt } from "react-icons/fa";
 
 interface PopupProps {
   isOpen: boolean;
@@ -51,7 +52,8 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose, title, address, number }
         style={{ y }}
         className="w-full relative max-w-md h-4/5 bg-white rounded-t-lg p-4"
       >
-        <div className="flex flex-col items-center gap-4 py-2 px-6">
+        <div className="flex flex-col items-center gap-4 px-6">
+          <hr className='w-[50px] border-2 rounded-full border-gray-400'/> 
           <ConnectPharmacy />
           {/* Pickup Info */}
           <div className='w-full border-b'>
@@ -74,16 +76,18 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose, title, address, number }
           </div>
 
           {/* Button Container */}
-          <div className="absolute bottom-20 left-0 px-10 flex gap-4 mt-4 w-full font-light text-black text-center">
+          <div className="absolute bottom-20 left-0 px-10 flex gap-4 w-full font-light text-black text-center">
             <Link 
             href="/prescription"
-            className="flex-1 py-3 bg-tertiary rounded-lg font-semibold hover:bg-tertiary/50">
-              장바구니 담기
+            className="flex w-full items-center justify-center gap-1 py-3 bg-tertiary rounded-lg font-semibold hover:bg-tertiary/50">
+              <p>장바구니 담기</p>
+              <HiOutlineShoppingBag /> 
             </Link>
             <Link
             href="/prescription"
-            className="flex-1 py-3 bg-tertiary rounded-lg font-semibold hover:bg-tertiary/50">
-              처방전 미리보기
+            className="flex w-full items-center justify-center gap-1 py-3 bg-tertiary rounded-lg font-semibold hover:bg-tertiary/50">
+              <p>처방전 미리보기</p>
+              <FaRegListAlt />
             </Link>
           </div>
 
