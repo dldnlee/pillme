@@ -1,13 +1,12 @@
 'use client'
-import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import InputField from "@/app/components/InputField";
-import arrowLeft from "@/app/assets/icons/arrow_left.svg";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Suspense } from "react";
-import box from '@/app/assets/icons/box.svg'
-import link from '@/app/assets/icons/link.svg'
+import ReturnButton from "@/app/components/ReturnButton";
+import { FaLink } from "react-icons/fa6";
+import { FiPackage } from "react-icons/fi";
 
 
 const dummyData = [
@@ -27,14 +26,14 @@ function BottomMenu() {
   return (
     <div className='fixed flex overflow-hidden justify-center gap-2 text-center items-center w-full h-fit p-4 text-black bg-white pb-10 border-t-2 px-10 bottom-0 left-0'>
       <Link href="https://www.coupang.com/np/search?component=&q=%EB%85%B9%EC%B0%A8%EC%B6%94%EC%B6%9C%EB%AC%BC&channel=user" className="flex items-center justify-center gap-2 py-4 px-4 w-full bg-tertiary hover:bg-white hover:border hover:border-tertiary rounded-lg">
-        <Image src={link} alt="구매하기"/> 
+        <FaLink />
         <p>구매하기</p>
       </Link>
       <Link 
       href="/pickup" 
       replace={false}
       className="flex items-center justify-center gap-2 py-4 px-4 w-full bg-tertiary hover:bg-white hover:border hover:border-tertiary rounded-lg">
-        <Image src={box} alt="픽업 신청"/>
+        <FiPackage />
         <p>Pick-up 신청</p>
       </Link>
     </div>
@@ -56,12 +55,12 @@ const CircleDiagram = ({data} : CircleDiagramComponentProps) => {
 
   // Calculate positions in a circular layout based on the number of items
   const angleStep = (2 * Math.PI) / items.length;
-  const radius = 100; // distance from center, adjust as needed
+  const radius = 110; // distance from center, adjust as needed
 
   return (
     <div className="relative flex items-center justify-center w-80 h-80">
       {/* Center Circle */}
-      <div className="flex items-center justify-center w-24 h-24 bg-white border-2 border-pink-500 rounded-full text-center font-bold text-black">
+      <div className="flex items-center justify-center w-24 h-24 bg-white border-2 border-primary rounded-full text-center text-black shadow-md shadow-primary">
         {centerItem}
       </div>
 
@@ -74,7 +73,7 @@ const CircleDiagram = ({data} : CircleDiagramComponentProps) => {
         return (
           <div
             key={index}
-            className="absolute flex items-center justify-center w-20 h-20 bg-white border-2 border-pink-500 rounded-full text-center text-black"
+            className="absolute flex items-center justify-center w-20 h-20 bg-white border border-primary rounded-full text-center text-black"
             style={{
               transform: `translate(${x}px, ${y}px)`,
             }}
@@ -86,42 +85,6 @@ const CircleDiagram = ({data} : CircleDiagramComponentProps) => {
     </div>
   );
 };
-
-
-
-// function CircularMenu() {
-//   return (
-//     <CircleMenu
-//     startAngle={-90}
-//     rotationAngle={360}
-//     itemSize={3.5}
-//     radius={7}
-//     rotationAngleInclusive={false}
-//     className="w-full h-[350px] flex items-center justify-center z-0 transition-all"
-//     open={true}
-    
-//     menuToggleElement={(
-//       <button type="button" className="rounded-full size-[90px] border-2 bg-primary/20 shadow-md shadow-primary border-primary hover:bg-primary hover:text-white bg-white">
-//         <p>녹차추출물</p>
-//       </button>
-//     )}
-//     >
-//       {
-//         dummyData.map((item,idx) => (
-//           <CircleMenuItem 
-//           key={idx}
-//           style={{
-//             borderColor: "#FF95DE",
-//             borderWidth: "2px",
-//           }}
-//           >
-//             <p>{item.sub[idx]}</p>
-//           </CircleMenuItem>
-//         ))
-//       }
-//     </CircleMenu>
-//   )
-// }
 
 function Feedback() {
   return (
@@ -150,9 +113,7 @@ function SearchHeader() {
 
   return (
     <div className="flex w-full items-center justify-center gap-2">
-      <Link href="./" replace={true}>
-        <Image src={arrowLeft} alt="돌아가기" className="w-[30px]"/>
-      </Link>
+      <ReturnButton /> 
       <InputField userInput={search} />
     </div>
   )

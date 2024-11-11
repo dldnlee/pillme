@@ -2,11 +2,9 @@
 import InputField from "../components/InputField"
 import Header from "../components/Header"
 import PickupItems from "./components/PickupItems";
-import arrowLeft from "@/app/assets/icons/arrow_left.svg";
-import Image from "next/image";
 // import { useState } from "react";
 import ConnectPharmacy from "../components/ConnectPharmacy";
-import { useRouter } from "next/navigation";
+import ReturnButton from "../components/ReturnButton";
 
 const dummyData = [
   {
@@ -34,17 +32,12 @@ const dummyData = [
 
 
 function PickupHeader() {
-  const router = useRouter();
 
   return (
     <div className="flex w-full items-center justify-center gap-2 px-6 py-3">
       <div className="flex flex-col items-center w-full gap-2">
         <div className="flex justify-between items-center w-full">
-          <button 
-          onClick={() => router.back()}
-          className="w-[22px]">
-            <Image src={arrowLeft} alt="돌아가기" className="w-full"/>
-          </button>
+          <ReturnButton /> 
           <ConnectPharmacy />
           <button disabled className="size-[22px]" />
         </div>

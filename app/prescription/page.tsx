@@ -1,20 +1,19 @@
 
 // import Image from 'next/image';
-import Link from 'next/link';
-import { FaArrowLeft } from 'react-icons/fa';
+'use client'
 import { FiSearch } from 'react-icons/fi';
 import Header from '../components/Header';
+import ReturnButton from '../components/ReturnButton';
 
 
 export default function PrescriptionPage() {
+
   return (
     <div className="w-full h-full flex flex-col items-center bg-white relative">
       <Header />
       {/* Header */}
       <header className="flex items-center w-full px-4 py-2 border-b bg-white">
-        <Link href="/">
-          <FaArrowLeft className="text-lg text-black cursor-pointer" />
-        </Link>
+        <ReturnButton /> 
         <h1 className="flex-1 text-center text-lg font-bold text-black">처방전 미리보기</h1>
       </header>
 

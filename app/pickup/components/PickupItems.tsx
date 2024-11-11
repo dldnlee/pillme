@@ -1,8 +1,7 @@
-import location from "@/app/assets/icons/location.svg";
-import phone from "@/app/assets/icons/phone.svg";
-import Image from "next/image";
 import Popup from "./Popup";
 import { useState } from "react";
+import { FaLocationDot } from "react-icons/fa6";
+import { FaPhoneAlt } from "react-icons/fa";
 
 export default function PickupItems({title, address, number} : {title: string, address: string, number: string}) {
   // const [active, setActive] = useState();
@@ -14,11 +13,11 @@ export default function PickupItems({title, address, number} : {title: string, a
       <div>
         <h3 className="font-bold py-1">{title}</h3>
         <div className="flex gap-2 text-xs">
-          <Image src={location} alt=""/>
+          <FaLocationDot className="text-gray-400" />
           <p>{address}</p>
         </div>
         <div className="flex gap-2 text-xs">
-          <Image src={phone} alt=""/>
+          <FaPhoneAlt className="text-gray-400" />
           <p>{number}</p>
         </div>
       </div>
