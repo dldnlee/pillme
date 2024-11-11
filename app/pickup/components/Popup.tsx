@@ -7,6 +7,7 @@ import Image from "next/image";
 import location from "@/app/assets/icons/location.svg";
 import phone from "@/app/assets/icons/phone.svg";
 import ConnectPharmacy from '@/app/components/ConnectPharmacy';
+import Link from 'next/link';
 // import mapImage from '@/app/assets/map_image.png'; // Replace with your actual map image path or URL
 
 interface PopupProps {
@@ -73,13 +74,17 @@ const Popup: React.FC<PopupProps> = ({ isOpen, onClose, title, address, number }
           </div>
 
           {/* Button Container */}
-          <div className="absolute bottom-20 left-0 px-10 flex gap-4 mt-4 w-full text-black">
-            <button className="flex-1 py-2 bg-tertiary rounded-lg font-semibold">
+          <div className="absolute bottom-20 left-0 px-10 flex gap-4 mt-4 w-full font-light text-black text-center">
+            <Link 
+            href="/prescription"
+            className="flex-1 py-3 bg-tertiary rounded-lg font-semibold hover:bg-tertiary/50">
               장바구니 담기
-            </button>
-            <button className="flex-1 py-2 bg-tertiary rounded-lg font-semibold">
+            </Link>
+            <Link
+            href="/prescription"
+            className="flex-1 py-3 bg-tertiary rounded-lg font-semibold hover:bg-tertiary/50">
               처방전 미리보기
-            </button>
+            </Link>
           </div>
 
         </div>
