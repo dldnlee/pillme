@@ -95,7 +95,7 @@ function DietSlide() {
         <div className='flex items-center justify-between gap-4'>
           <button
           type="button" 
-          className='w-[80px] flex items-center' 
+          className='w-[90px] flex items-center' 
           onClick={() => swiper.slidePrev()}>
             <p className='text-xs font-semibold text-black/50'>건강기능식품</p>
             <Image src={backward} alt="Forward" /> 
