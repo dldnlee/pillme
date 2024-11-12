@@ -12,15 +12,17 @@ export default function Header() {
 
 
   return (
-    <div className='bg-white w-full z-20 sticky top-0 left-0 flex justify-between px-4 py-2 shadow-sm'>
-      <div className='flex items-center justify-center gap-2'>
-        <Image src={pillmeChar} className='w-[20px]' alt='필미 매스콧'/>
-        <p className='text-primary font-extrabold text-xl'>Pill Me</p>
+    <>
+      <div className='bg-white w-full z-20 sticky top-0 left-0 flex justify-between px-4 py-2 shadow-sm'>
+        <div className='flex items-center justify-center gap-2'>
+          <Image src={pillmeChar} className='w-[20px]' alt='필미 매스콧'/>
+          <p className='text-primary font-extrabold text-xl'>Pill Me</p>
+        </div>
+        <button className='flex' type='button' onClick={() => setSideBar(!sideBar)}>
+          <Image src={hamburger} alt="메뉴 아이콘"/>
+        </button>
       </div>
-      <button className='flex' type='button' onClick={() => setSideBar(!sideBar)}>
-        <Image src={hamburger} alt="메뉴 아이콘"/>
-      </button>
       <SideBar active={sideBar} setActive={setSideBar} /> 
-    </div>
+    </>
   )
 }
