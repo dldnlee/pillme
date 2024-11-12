@@ -24,15 +24,16 @@ function BottomMenu() {
 
 
   return (
-    <div className='fixed flex overflow-hidden justify-center gap-2 text-center items-center w-full h-fit p-4 text-black bg-white pb-10 border-t-2 px-10 bottom-0 left-0'>
-      <Link href="https://www.coupang.com/np/search?component=&q=%EB%85%B9%EC%B0%A8%EC%B6%94%EC%B6%9C%EB%AC%BC&channel=user" className="flex items-center justify-center gap-2 py-4 px-4 w-full bg-tertiary hover:bg-white hover:border hover:border-tertiary rounded-lg">
+    <div className='sticky flex justify-center gap-2 text-center items-center w-full h-fit p-4 text-black bg-white pb-10 border-t-2 px-4 bottom-0 left-0'>
+      <Link href="https://www.coupang.com/np/search?component=&q=%EB%85%B9%EC%B0%A8%EC%B6%94%EC%B6%9C%EB%AC%BC&channel=user" 
+      className="flex items-center justify-center gap-2 py-4 px-4 w-[200px] border border-tertiary bg-tertiary hover:bg-white hover:border hover:border-tertiary rounded-lg">
         <FaLink />
         <p>구매하기</p>
       </Link>
       <Link 
       href="/pickup" 
       replace={false}
-      className="flex items-center justify-center gap-2 py-4 px-4 w-full bg-tertiary hover:bg-white hover:border hover:border-tertiary rounded-lg">
+      className="flex items-center justify-center gap-2 py-4 px-4 w-[200px] border border-tertiary bg-tertiary hover:bg-white hover:border hover:border-tertiary rounded-lg">
         <FiPackage />
         <p>Pick-up 신청</p>
       </Link>
@@ -135,7 +136,7 @@ function Information() {
 export default function ResultPage() {
   
   return (
-    <div className="p-5 flex flex-col gap-4 w-full h-screen relative">
+    <div className="p-5 flex flex-col gap-4 w-full h-full relative">
       <div className="w-full flex flex-col gap-3">
         <Suspense>
           <SearchHeader />

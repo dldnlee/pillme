@@ -98,7 +98,7 @@ function DietSlide() {
           className='w-[90px] flex items-center' 
           onClick={() => swiper.slidePrev()}>
             <p className='text-xs font-semibold text-black/50'>건강기능식품</p>
-            <Image src={backward} alt="Forward" /> 
+            <Image src={backward} alt="Forward" />
           </button>
           <Image src={pillMeChar} alt="필미 매스콧" className='w-[120px] min-w-[120px]'/>
           <button className='w-[80px]' disabled></button>
