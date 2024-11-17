@@ -8,18 +8,21 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 
-const dummyData = [
+const buttonList = [
   {
     text: "주문 목록",
-    icon: files
+    icon: files,
+    link: "orderinfo/list"
   },
   {
     text: "조제 완료 목록",
-    icon: clipBoard
+    icon: clipBoard,
+    link: "orderinfo/completed"
   },
   {
     text: "매장 재고",
-    icon: tripleBar
+    icon: tripleBar,
+    link: "orderinfo/stock"
   },
 ]
 
@@ -32,26 +35,28 @@ export default function SideBar({active, setActive} : {active : boolean, setActi
       <div className='bg-white w-[500px] h-full rounded-tr-lg shadow-2xl z-20 flex flex-col justify-between py-8'>
         <div className=''>
           {
-            dummyData.map((item, idx) => (
-              <button key={idx} className='w-full hover:bg-gray-200 flex p-6 items-center justify-between'>
+            buttonList.map((item, idx) => (
+              <Link href={item.link} key={idx} className='w-full hover:bg-gray-200 flex p-6 items-center justify-between'>
                 <div className='flex gap-3'>
                   <Image src={item.icon} alt={item.text}/>
                   <p>{item.text}</p>
                 </div>
                 <Image src={forward} alt="Right Arrow" />
-              </button>
+              </Link>
             ))
           }
         </div>
         
         <div className='border-t'>
-          <button className='w-full flex p-6 items-center justify-between hover:bg-gray-200'>
+          <Link
+          href="/settings"
+          className='w-full flex p-6 items-center justify-between hover:bg-gray-200'>
             <div className='flex gap-3'>
               <Image src={gear} alt="clipboard" />
               <p>설정</p>
             </div>
             <Image src={forward} alt="Right Arrow" /> 
-          </button>
+          </Link>
           <Link href="/login" className='w-full flex p-6 items-center justify-between hover:bg-gray-200'>
             <div className='flex gap-3'>
               <Image src={signin} alt="clipboard" />

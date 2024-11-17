@@ -9,8 +9,6 @@ import SideBar from './SideBar';
 
 export default function Header() {
   const [sideBar, setSideBar] = useState(false);
-
-
   return (
     <>
       <div className='bg-white w-full z-20 sticky top-0 left-0 flex justify-between px-4 py-2 shadow-sm'>
