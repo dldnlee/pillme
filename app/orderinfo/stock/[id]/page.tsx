@@ -90,7 +90,7 @@ const StockDetailsPage: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="p-4 flex flex-col gap-y-3">
+      <div className="p-4 flex flex-col gap-y-3 pb-[100px]">
         {
           dummyMedicines.map((med, idx) => (
             <ListItem 

@@ -13,7 +13,7 @@ const BottomNavBar: React.FC = () => {
   const isActive = (path: string) => pathname.includes(path);
 
   return (
-    <div className="sticky bottom-0 left-0 bg-white shadow-lg border-t border-gray-200 pb-6">
+    <div className="fixed w-full max-w-[500px] bottom-0 mx-auto bg-white shadow-lg border-t border-gray-200 pb-6">
       <div className="flex justify-around py-2">
         {/* Home */}
         <Link
