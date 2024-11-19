@@ -2,7 +2,6 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
-import { FiArrowLeft } from "react-icons/fi";
 import InputField from "@/app/components/InputField";
 
 const dummyMedicines = [

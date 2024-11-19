@@ -3,8 +3,6 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { useParams } from "next/navigation";
 import { FiArrowLeft } from "react-icons/fi";
-import Link from "next/link";
-import { SlArrowRight } from "react-icons/sl";
 
 const dummyMedicines = [
   {
