@@ -33,7 +33,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable}`}
       >
-        <div className="mx-auto max-w-[500px] h-screen overflow-y-auto bg-white no-scrollbar relative">
+        <div className="mx-auto max-w-[500px] h-dvh overflow-y-auto bg-white no-scrollbar relative">
           {children}
         </div>
       </body>
