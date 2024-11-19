@@ -20,9 +20,9 @@ const NotificationSettingsPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Header */}
-      <div className="flex items-center justify-between px-4 py-4 bg-white shadow">
+      <div className="flex items-center justify-between px-4 py-4 bg-white">
         <button 
         type="button"
         onClick={() => router.back()}
@@ -34,13 +34,13 @@ const NotificationSettingsPage: React.FC = () => {
       </div>
 
       {/* Notification Settings */}
-      <div className="px-4 py-6 space-y-4">
+      <div className="px-6 py-6 pt-0 space-y-4">
         <div className="flex items-center justify-between border-b py-4">
           <span className="text-sm font-medium text-gray-800">메시지 알림</span>
           <button
             onClick={() => toggleSetting("messageAlerts")}
             className={`w-10 h-5 flex items-center rounded-full ${
-              settings.messageAlerts ? "bg-blue-500" : "bg-gray-300"
+              settings.messageAlerts ? "bg-gray-500" : "bg-gray-300"
             }`}
           >
             <span
@@ -55,7 +55,7 @@ const NotificationSettingsPage: React.FC = () => {
           <button
             onClick={() => toggleSetting("sound")}
             className={`w-10 h-5 flex items-center rounded-full ${
-              settings.sound ? "bg-blue-500" : "bg-gray-300"
+              settings.sound ? "bg-gray-500" : "bg-gray-300"
             }`}
           >
             <span
@@ -70,7 +70,7 @@ const NotificationSettingsPage: React.FC = () => {
           <button
             onClick={() => toggleSetting("vibration")}
             className={`w-10 h-5 flex items-center rounded-full ${
-              settings.vibration ? "bg-blue-500" : "bg-gray-300"
+              settings.vibration ? "bg-gray-500" : "bg-gray-300"
             }`}
           >
             <span
@@ -85,7 +85,7 @@ const NotificationSettingsPage: React.FC = () => {
           <button
             onClick={() => toggleSetting("popup")}
             className={`w-10 h-5 flex items-center rounded-full ${
-              settings.popup ? "bg-blue-500" : "bg-gray-300"
+              settings.popup ? "bg-gray-500" : "bg-gray-300"
             }`}
           >
             <span
@@ -102,7 +102,7 @@ const NotificationSettingsPage: React.FC = () => {
           <button
             onClick={() => toggleSetting("showContent")}
             className={`w-10 h-5 flex items-center rounded-full ${
-              settings.showContent ? "bg-blue-500" : "bg-gray-300"
+              settings.showContent ? "bg-gray-500" : "bg-gray-300"
             }`}
           >
             <span

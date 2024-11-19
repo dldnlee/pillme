@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-tertiary flex flex-col items-center justify-center`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white flex flex-col items-center justify-center`}
       >
         <div className="w-[400px] max-w-[400px] h-screen overflow-y-auto bg-white no-scrollbar relative">
           {children}
