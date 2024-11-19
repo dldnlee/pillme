@@ -12,11 +12,11 @@ const OrderListPage: React.FC = () => {
 
   const dummyOrders = [
     { id: "as129e8uaw", title: "바이토린정", date: "2024-10-12", patient: "박지민", info: "10/10외 1종" },
-    { id: "kd93hdje73", title: "타이레놀", date: "2024-10-10", patient: "김철수", info: "5/5외 2종" },
-    { id: "9s0afj2301", title: "아스피린", date: "2024-09-25", patient: "이영희", info: "8/3외 1종" },
-    { id: "qwe8ty1234", title: "비타민 C", date: "2024-08-15", patient: "박영수", info: "12/7외 3종" },
-    { id: "zx82ty9812", title: "오메가 3", date: "2024-07-12", patient: "최민호", info: "10/4외 2종" },
-    { id: "plm23vc894", title: "플루코나졸", date: "2024-06-10", patient: "윤서진", info: "7/2외 1종" },
+    { id: "kd93hdje73", title: "타이레놀", date: "2024-10-10", patient: "박지민", info: "5/5외 2종" },
+    { id: "9s0afj2301", title: "아스피린", date: "2024-09-25", patient: "박지민", info: "8/3외 1종" },
+    { id: "qwe8ty1234", title: "비타민 C", date: "2024-08-15", patient: "박지민", info: "12/7외 3종" },
+    { id: "zx82ty9812", title: "오메가 3", date: "2024-07-12", patient: "박지민", info: "10/4외 2종" },
+    { id: "plm23vc894", title: "플루코나졸", date: "2024-06-10", patient: "박지민", info: "7/2외 1종" },
   ];
 
   return (

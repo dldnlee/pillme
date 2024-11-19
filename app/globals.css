@@ -18,6 +18,12 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+
+html, body {
+  overscroll-behavior: none; /* Prevent touch interactions from being overridden */
 }
 
 @layer utilities {

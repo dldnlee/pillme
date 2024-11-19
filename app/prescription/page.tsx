@@ -6,6 +6,7 @@ import ReturnButton from '../components/ReturnButton';
 import { CgSearchLoading } from "react-icons/cg";
 import React, { useState } from "react";
 import PopUp from './components/Popup';
+import { FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 
 
 interface Medication {
@@ -17,29 +18,29 @@ interface Medication {
   warnings: string;
 }
 
+const dummyData: Medication[] = [
+  {
+    id: 1,
+    name: "복합써스펜좌약",
+    company: "한미약품(주)",
+    ingredients: "아세트아미노펜, 이부프로펜",
+    usage: "감기로 인한 발열 및 통증에 사용합니다.",
+    warnings: "복용 전에 의사와 상담하세요.",
+  },
+  {
+    id: 2,
+    name: "보령뮤코미스트액(아세틸시스테인)",
+    company: "(주)보령",
+    ingredients: "아세틸시스테인",
+    usage: "기관지염 및 호흡기 질환에 사용합니다.",
+    warnings: "간 기능 장애 환자는 복용을 피하세요.",
+  },
+  // Add more dummy data here
+];
 const MedicineContent: React.FC = () => {
   const [view, setView] = useState<"list" | "details">("list"); // Tracks the current screen
   const [selectedMedication, setSelectedMedication] = useState<Medication | null>(null); // Selected item
 
-  const dummyData: Medication[] = [
-    {
-      id: 1,
-      name: "복합써스펜좌약",
-      company: "한미약품(주)",
-      ingredients: "아세트아미노펜, 이부프로펜",
-      usage: "감기로 인한 발열 및 통증에 사용합니다.",
-      warnings: "복용 전에 의사와 상담하세요.",
-    },
-    {
-      id: 2,
-      name: "보령뮤코미스트액(아세틸시스테인)",
-      company: "(주)보령",
-      ingredients: "아세틸시스테인",
-      usage: "기관지염 및 호흡기 질환에 사용합니다.",
-      warnings: "간 기능 장애 환자는 복용을 피하세요.",
-    },
-    // Add more dummy data here
-  ];
 
   const handleItemClick = (medication: Medication) => {
     setSelectedMedication(medication);
@@ -52,7 +53,7 @@ const MedicineContent: React.FC = () => {
   };
 
   return (
-    <div className="h-full px-4">
+    <div className="h-full px-4 w-full">
       {view === "list" && (
         <div>
           {/* Header */}
@@ -70,7 +71,7 @@ const MedicineContent: React.FC = () => {
           </div>
 
           {/* List Items */}
-          <ul className="divide-y divide-gray-200">
+          <ul className="divide-y divide-gray-200 w-full h-full">
             {dummyData.map((medicine) => (
               <li
                 key={medicine.id}
@@ -81,7 +82,9 @@ const MedicineContent: React.FC = () => {
                   <p className="text-sm font-bold">{medicine.name}</p>
                   <p className="text-xs text-gray-500">{medicine.company}</p>
                 </div>
-                <span className="text-gray-400">→</span>
+                <span className="text-gray-400">
+                  <FiArrowRight />
+                </span>
               </li>
             ))}
           </ul>
@@ -93,7 +96,7 @@ const MedicineContent: React.FC = () => {
           {/* Header with Back Button */}
           <div className="flex items-center justify-between mb-4">
             <button onClick={handleBackClick} className="text-gray-500 hover:text-gray-800">
-              ← Back
+              <FiArrowLeft size={24}/>
             </button>
             <h2 className="text-lg font-bold">{selectedMedication.name}</h2>
           </div>

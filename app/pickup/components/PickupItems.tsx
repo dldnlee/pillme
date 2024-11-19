@@ -24,7 +24,7 @@ export default function PickupItems({title, address, number} : {title: string, a
       <button 
       onClick={() => setPopUpOpen(true)}
       className="text-xs font-semibold p-2 rounded-lg h-[53px] bg-skyblue hover:bg-skyblue/30">
-        픽억예약
+        픽업예약
       </button>
       <Popup isOpen={popUpOpen} onClose={() => setPopUpOpen(false)} title={title} address={address} number={number}/>
     </li>

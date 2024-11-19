@@ -51,7 +51,7 @@ export default function PickupPage() {
 
 
   return (
-    <div className="w-full flex-col gap-4 h-full select-none relative">
+    <div className="w-full flex-col gap-4 h-full select-none relativ">
       <Header />
       <PickupHeader />
       <div className="w-full py-3 px-9 flex flex-col gap-5 h-full">
