@@ -21,10 +21,8 @@ const dummyData = [
 ]
 
 function BottomMenu() {
-
-
   return (
-    <div className='sticky flex justify-center gap-2 text-center items-center w-full h-fit p-4 text-black bg-white pb-10 border-t-2 px-4 bottom-0 left-0'>
+    <div className='fixed max-w-[500px] flex justify-center gap-2 text-center items-center w-full h-fit p-4 text-black bg-white pb-10 border-t-2 px-4 bottom-0 left-0'>
       <Link href="https://www.coupang.com/np/search?component=&q=%EB%85%B9%EC%B0%A8%EC%B6%94%EC%B6%9C%EB%AC%BC&channel=user" 
       className="flex items-center justify-center gap-2 py-4 px-4 w-[200px] border border-tertiary bg-tertiary hover:bg-white hover:border hover:border-tertiary rounded-lg">
         <FaLink />
@@ -61,7 +59,7 @@ const CircleDiagram = ({data} : CircleDiagramComponentProps) => {
   return (
     <div className="relative flex items-center justify-center w-80 h-80">
       {/* Center Circle */}
-      <div className="flex items-center justify-center w-24 h-24 bg-white border-2 border-primary rounded-full text-center text-black shadow-md shadow-primary">
+      <div className="flex items-center justify-center w-24 h-24 bg-white border-2 bg-primary/20 border-primary rounded-full text-center text-black shadow-md shadow-primary">
         {centerItem}
       </div>
 
@@ -136,8 +134,8 @@ function Information() {
 export default function ResultPage() {
   
   return (
-    <div className="p-5 flex flex-col gap-4 w-full h-full relative">
-      <div className="w-full flex flex-col gap-3">
+    <div className="p-5 flex flex-col gap-4 w-full h-full">
+      <div className="w-full flex flex-col gap-3 pb-6">
         <Suspense>
           <SearchHeader />
         </Suspense>
