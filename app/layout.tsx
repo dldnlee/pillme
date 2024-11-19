@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { usePathname } from "next/navigation";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -23,17 +24,22 @@ export const viewport: Viewport = {
   width: 'device-width'
 }
 
+const mobileStyling = "mx-auto max-w-[500px] h-dvh overflow-y-auto bg-white no-scrollbar relative"
+const pharmStyling = "w-screen h-screen"
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+
   return (
     <html lang="ko">
       <body
         className={`${geistSans.variable} ${geistMono.variable}`}
       >
-        <div className="mx-auto max-w-[500px] h-dvh overflow-y-auto bg-white no-scrollbar relative">
+        <div className={`${pathname.includes("/pharmacy") ? pharmStyling : mobileStyling}`}>
           {children}
         </div>
       </body>
