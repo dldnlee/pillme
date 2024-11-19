@@ -31,7 +31,7 @@ const buttonList = [
 export default function SideBar({active, setActive} : {active : boolean, setActive: React.Dispatch<React.SetStateAction<boolean>>}) {
   return (
     <div 
-    className={`flex z-50 top-0 left-0 w-full h-full backdrop-blur-md ${active ? 'absolute' : 'hidden'}`}>
+    className={`flex z-50 sticky top-0 left-0 w-full h-dvh backdrop-blur-md ${active ? 'absolute' : 'hidden'}`}>
       <div className='bg-white w-[500px] h-full rounded-tr-lg shadow-2xl z-20 flex flex-col justify-between py-8'>
         <div className=''>
           {
