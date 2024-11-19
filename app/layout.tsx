@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 
@@ -17,6 +17,11 @@ export const metadata: Metadata = {
   title: "Pill Me",
   description: "약 처방을 한번에",
 };
+
+export const viewport: Viewport = {
+  initialScale: 1,
+  width: 'device-width'
+}
 
 export default function RootLayout({
   children,
