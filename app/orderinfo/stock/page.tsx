@@ -4,21 +4,25 @@ import ResultItems from "./components/ResultItem";
 
 const dummyData = [
   {
+    id: '2i3daskdmn',
     title: "우리약국",
     address: "서울특별시 성동구 왕십리로 50, 지하 1층",
     number: "02-123-4567"
   },
   {
+    id: '2i3daskdmn',
     title: "우리약국",
     address: "서울특별시 성동구 왕십리로 50, 지하 1층",
     number: "02-123-4567"
   },
   {
+    id: '2i3daskdmn',
     title: "우리약국",
     address: "서울특별시 성동구 왕십리로 50, 지하 1층",
     number: "02-123-4567"
   },
   {
+    id: '2i3daskdmn',
     title: "우리약국",
     address: "서울특별시 성동구 왕십리로 50, 지하 1층",
     number: "02-123-4567"
@@ -43,7 +47,7 @@ export default function OrderStockPage() {
           <h3 className="w-full border-b-2 pb-2 border-black/20 font-bold">검색 결과</h3>
           <ul>
             {dummyData.map((item, idx) => (
-              <ResultItems key={idx} title={item.title} address={item.address} number={item.number} /> 
+              <ResultItems key={idx} id={item.id} title={item.title} address={item.address} number={item.number} /> 
             ))}
           </ul>
         </div>

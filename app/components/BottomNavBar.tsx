@@ -10,10 +10,10 @@ import { usePathname } from "next/navigation";
 const BottomNavBar: React.FC = () => {
   const pathname = usePathname();
   // Function to check if the current route is active
-  const isActive = (path: string) => pathname === path;
+  const isActive = (path: string) => pathname.includes(path);
 
   return (
-    <div className="sticky bottom-0 bg-white shadow-lg border-t border-gray-200">
+    <div className="sticky bottom-0 left-0 bg-white shadow-lg border-t border-gray-200 pb-6">
       <div className="flex justify-around py-2">
         {/* Home */}
         <Link

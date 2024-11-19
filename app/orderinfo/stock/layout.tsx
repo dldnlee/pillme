@@ -13,7 +13,7 @@ export default function StockLayout({children} : {children: React.ReactNode}) {
         <button onClick={() => router.back()} className="text-gray-600">
           <FiArrowLeft className="size-[20px]" />
         </button>
-        <h1 className="text-lg font-bold text-gray-800">주문 목록</h1>
+        <h1 className="text-lg font-bold text-gray-800">매장 재고 목록</h1>
         <div className="w-5" />
       </div>
       {children}

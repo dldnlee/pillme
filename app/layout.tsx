@@ -28,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-tertiary flex flex-col items-center justify-center`}
       >
-        <div className="w-[400px] max-w-[400px] h-[900px] max-h-[900px] overflow-y-auto bg-white no-scrollbar relative">
+        <div className="w-[400px] max-w-[400px] h-screen overflow-y-auto bg-white no-scrollbar relative">
           {children}
         </div>
       </body>
