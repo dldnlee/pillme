@@ -83,7 +83,7 @@ const ListItem = ({name, oneDayAmount, oneDayFreq, medPeriod, caution} : ListIte
 
 const ListDetailsPage: React.FC = () => {
   const router = useRouter();
-  const { id } = useParams(); // Extract the `id` from the dynamic route
+  // const { id } = useParams(); // Extract the `id` from the dynamic route
 
   return (
     <div className="w-full h-screen bg-white">
