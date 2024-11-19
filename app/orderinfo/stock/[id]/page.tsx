@@ -81,7 +81,6 @@ const ListItem = ({name, oneDayAmount, oneDayFreq, medPeriod, caution} : ListIte
 
 
 const StockDetailsPage: React.FC = () => {
-  const router = useRouter();
   // const { id } = useParams(); // Extract the `id` from the dynamic route
 
   return (
