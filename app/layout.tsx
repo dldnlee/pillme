@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import RootStyle from "./components/RootStyle";
 import "./globals.css";
 import { usePathname } from "next/navigation";
 
@@ -39,9 +40,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable}`}
       >
-        <div className={`${pathname.includes("/pharmacy") ? pharmStyling : mobileStyling}`}>
+        <RootStyle>
           {children}
-        </div>
+        </RootStyle>
       </body>
     </html>
   );
