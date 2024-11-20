@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import RootStyle from "./components/RootStyle";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -33,9 +34,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable}`}
       >
-        <div className="mx-auto max-w-[500px] h-dvh overflow-y-auto bg-white no-scrollbar relative">
+        <RootStyle>
           {children}
-        </div>
+        </RootStyle>
       </body>
     </html>
   );
