@@ -23,7 +23,7 @@ export default function LoginPage() {
 
   return (
     <div className="p-5 flex flex-col gap-5">
-      <Link href="/home" replace={true} className="w-full">
+      <Link href="/" replace={true} className="w-full">
         <Image src={backward} alt="뒤로가기" className="w-[30px]" />
       </Link>
 
