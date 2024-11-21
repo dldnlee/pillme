@@ -13,48 +13,48 @@ const Sidebar = () => {
 
 
   return (
-    <div className="h-full bg-white flex flex-col flex-grow justify-between border-e">
+    <div className="h-full bg-white flex flex-col flex-grow justify-between border-e rounded-e-xl">
       {/* Navigation */}
-      <div className="flex w-full h-full">
-        <nav className="w-60 bg-gray-400 flex flex-col justify-between">
+      <div className="flex w-full h-full py-4">
+        <nav className="w-60 flex flex-col justify-between">
           <ul className="">
             <li>
-              <Link href="/pharmacy" className={`${pathname === "/pharmacy" ? "font-bold" : ""} p-4 hover:bg-gray-200 flex items-center gap-4 text-gray-700 hover:text-pink-500`}>
+              <Link href="/pharmacy" className={`${pathname === "/pharmacy" ? "font-extrabold text-primary" : ""} p-4 hover:bg-gray-200 flex items-center gap-4 text-gray-700 hover:text-primary`}>
                 <AiOutlineShoppingCart size={20} />
                 조제 요청
               </Link>
             </li>
             <li>
-              <Link href="/pharmacy/completed" className={`${pathname.includes("/completed") ? "font-bold" : ""} p-4 hover:bg-gray-200 flex items-center gap-4 text-gray-700 hover:text-pink-500`}>
+              <Link href="/pharmacy/completed" className={`${pathname.includes("/completed") ? "font-extrabold text-primary" : ""} p-4 hover:bg-gray-200 flex items-center gap-4 text-gray-700 hover:text-primary`}>
                 <BsClipboard2Check size={20} />
                 조제 완료
               </Link>
             </li>
             <li>
-              <Link href="/pharmacy/pickup" className={`${pathname.includes("/pickup") ? "font-bold" : ""} p-4 hover:bg-gray-200 flex items-center gap-4 text-gray-700 hover:text-pink-500`}>
+              <Link href="/pharmacy/pickup" className={`${pathname.includes("/pickup") ? "font-extrabold text-primary" : ""} p-4 hover:bg-gray-200 flex items-center gap-4 text-gray-700 hover:text-primary`}>
                 <BsPeople size={20} />
                 현장 접수
               </Link>
             </li>
             <li>
-              <Link href="/pharmacy/inventory" className={`${pathname.includes("/inventory") ? "font-bold" : ""} p-4 hover:bg-gray-200 flex items-center gap-4 text-gray-700 hover:text-pink-500`}>
+              <Link href="/pharmacy/inventory" className={`${pathname.includes("/inventory") ? "font-extrabold text-primary" : ""} p-4 hover:bg-gray-200 flex items-center gap-4 text-gray-700 hover:text-primary`}>
                 <HiOutlineRectangleStack size={20} />
                 매장 재고
               </Link>
             </li>
           </ul>
-          <ul className="px-4 pb-6 space-y-4">
+          <ul className="pb-6 border-t">
             <li>
-              <Link href="/settings" className="flex items-center gap-4 text-gray-700 hover:text-pink-500">
+              <Link href="/settings" className="flex p-4 items-center gap-4 text-gray-700 hover:text-primary hover:bg-gray-200">
                 <AiOutlineSetting size={20} />
                 Settings
               </Link>
             </li>
             <li>
-              <button className="flex items-center gap-4 text-gray-700 hover:text-pink-500">
+              <Link href="/login" className="flex p-4 items-center gap-4 text-gray-700 hover:text-primary hover:bg-gray-200">
                 <IoMdLogOut size={20} />
                 Sign Out
-              </button>
+              </Link>
             </li>
           </ul>
         </nav>

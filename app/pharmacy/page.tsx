@@ -1,7 +1,19 @@
 // app/pharmacist/orders/page.tsx
 'use client'
+import InputField from "../components/InputField";
 import ListItem from "../components/ListItem";
+import React from 'react';
+import { SlArrowRight } from 'react-icons/sl';
 
+const dummyData = [
+  { id: 1, name: '복합써스펜좌약', company: '한미약품(주)' },
+  { id: 2, name: '보령무코미스트액(아세틸시스테인)', company: '(주)보령' },
+  { id: 3, name: '베아제정', company: '(주)대웅제약' },
+  { id: 4, name: '뮤테란캡슐200밀리그램(아세틸시스테인)', company: '한화제약(주)' },
+  { id: 5, name: '뮤테란과립200밀리그램(아세틸시스테인)', company: '한화제약(주)' },
+  { id: 6, name: '맥시부펜시럽(덱시부프로펜)', company: '한미약품(주)' },
+  { id: 7, name: '마그밀정(수산화마그네슘)', company: '삼남제약(주)' },
+];
 
 const dummyMedicines = [
   {
@@ -59,38 +71,62 @@ const PharmacyPage: React.FC = () => {
 
 
   return (
-    <div className="bg-white overflow-x-hidden w-full h-full">
-      <h1 className="sticky top-0 bg-white text-xl font-bold text-center border-b py-3">처방전 미리보기</h1>
-      <div className="w-full h-full bg-white">
-      <div className="p-4">
-        {/* Medication Info */}
-        <div className="w-full flex">
-          <div className="flex-grow">
-            <p>환자정보:</p>
-            <p>발행기관:</p>
+    <div className="bg-white overflow-x-hidden w-full h-full flex">
+      <div className="w-full overflow-auto">
+        <h1 className="sticky top-0 bg-white text-xl font-bold text-center border-b py-3">처방전 미리보기</h1>
+        <div className="w-full h-full bg-white">
+          <div className="p-4">
+            {/* Medication Info */}
+            <div className="w-full flex">
+              <div className="flex-grow">
+                <p>환자정보:</p>
+                <p>발행기관:</p>
+              </div>
+              <div className="flex-grow">
+                <p>조제약사:</p>
+                <p>조제일자:</p>
+              </div>
+            </div>
+            {/* Content */}
+            <div className="flex flex-col gap-y-3 py-3 pb-[100px]">
+              {
+                dummyMedicines.map((med, idx) => (
+                  <ListItem
+                  key={idx}
+                  name={med.name}
+                  oneDayAmount={med.oneDayAmount}
+                  oneDayFreq={med.oneDayFreq}
+                  medPeriod={med.medPeriod}
+                  caution={med.caution}
+                  />
+                ))
+              }
+            </div>
           </div>
-          <div className="flex-grow">
-            <p>조제약사:</p>
-            <p>조제일자:</p>
-          </div>
-        </div>
-        {/* Content */}
-        <div className="flex flex-col gap-y-3 py-3 pb-[100px]">
-          {
-            dummyMedicines.map((med, idx) => (
-              <ListItem
-              key={idx}
-              name={med.name}
-              oneDayAmount={med.oneDayAmount}
-              oneDayFreq={med.oneDayFreq}
-              medPeriod={med.medPeriod}
-              caution={med.caution}
-              />
-            ))
-          }
         </div>
       </div>
-    </div>
+      <div className="w-80 border-l p-4">
+        <InputField path="/pharmacy" />
+        <div className="bg-white overflow-auto">
+          {/* Header */}
+          <div className="flex items-center justify-between px-4 py-4 bg-white border-b">
+            <h1 className="text-lg font-bold text-gray-800">검색 결과</h1>
+          </div>
+
+          {/* Search Results */}
+          <ul className="divide-y divide-gray-200">
+            {dummyData.map((item) => (
+              <li key={item.id} className="flex justify-between items-center px-4 py-3 hover:bg-gray-100">
+                <div>
+                  <p className="text-sm font-bold text-gray-900">{item.name}</p>
+                  <p className="text-xs text-gray-500">{item.company}</p>
+                </div>
+                <SlArrowRight className="text-gray-400" />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };
