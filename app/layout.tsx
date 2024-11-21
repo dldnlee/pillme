@@ -36,7 +36,7 @@ export default function RootLayout({
   const pathname = usePathname();
 
   return (
-    <html lang="ko">
+    <html lang="ko" className="">
       <body
         className={`${geistSans.variable} ${geistMono.variable}`}
       >
