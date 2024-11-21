@@ -5,21 +5,18 @@ import "@/app/globals.css";
 
 const PharmacistLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="">
+    <div className="h-screen w-full">
       {/* Global Header */}
-      <div className="top-0 bg-white w-full border-b px-6 py-1 text-2xl font-bold text-pink-500">
+      <div className="bg-white fixed w-full z-20 border-b px-6 py-1 text-2xl font-bold text-pink-500">
         Pill Me
       </div>
 
       {/* Main Body */}
-      <div className="flex flex-grow h-full w-full">
+      <div className="h-full pt-[40px] w-full flex flex-grow-0">
         {/* Sidebar */}
-        <Sidebar />
-
+        <Sidebar/>
+        {children}
         {/* Main Content */}
-        <div className="w-full overflow-y-auto bg-gray-50">
-          {children}
-        </div>
       </div>
     </div>
   );

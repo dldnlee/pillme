@@ -59,7 +59,7 @@ const PharmacyPage: React.FC = () => {
 
 
   return (
-    <div className="bg-white overflow-x-hidden h-full">
+    <div className="bg-white overflow-x-hidden w-full h-full">
       <h1 className="sticky top-0 bg-white text-xl font-bold text-center border-b py-3">처방전 미리보기</h1>
       <div className="w-full h-full bg-white">
       <div className="p-4">
